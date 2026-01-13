@@ -1,0 +1,31 @@
+{
+  "name": "inrush",
+  "version": "0.0.1",
+  "description": "Run operations in batch.",
+  "keywords": [
+    "batch",
+    "batches"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "github.com/9d4/inrush"
+  },
+  "license": "MIT",
+  "author": "Dimanda <d@dimanda.dev>",
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "bun test",
+    "build": "bun build --target=browser --minify --outdir=dist ./index.ts",
+    "build:types": "tsc --project tsconfig.types.json",
+    "prepublishOnly": "bun run build && bun run build:types"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@types/bun": "latest"
+  },
+  "files": [
+    "dist"
+  ]
+}
